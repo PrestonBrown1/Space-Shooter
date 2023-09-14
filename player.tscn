@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://csxqvjn2hlel1"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_b7wxd"]
+[ext_resource type="Texture2D" uid="uid://cucn08cda3qrr" path="res://Assets/Tanks/SpaceShooterTank1Body1.png" id="2_dcjf2"]
+[ext_resource type="Texture2D" uid="uid://bmfvjdp7jsggi" path="res://Assets/Tanks/SpaceShooterTank1Body6.png" id="3_su18p"]
+[ext_resource type="Texture2D" uid="uid://b2yku706aabol" path="res://Assets/Tanks/SpaceShooterTank1Body5.png" id="4_opwsx"]
+[ext_resource type="Texture2D" uid="uid://daj1b3sio05uj" path="res://Assets/Tanks/SpaceShooterTank1Body4.png" id="5_m0uek"]
+[ext_resource type="Texture2D" uid="uid://cf2sb30saxm0e" path="res://Assets/Tanks/SpaceShooterTank1Body3.png" id="6_s7gr2"]
+[ext_resource type="Texture2D" uid="uid://c1vl57tf42wty" path="res://Assets/Tanks/SpaceShooterTank1Body2.png" id="7_ym0ul"]
+[ext_resource type="Texture2D" uid="uid://buh5hoh5p6qxa" path="res://Assets/Tanks/SpaceShooterTank1Head.png" id="8_5ywrh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14fnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dcjf2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dcjf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_su18p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_opwsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m0uek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s7gr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ym0ul")
+}],
+"loop": true,
+"name": &"MoveBack",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dcjf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ym0ul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s7gr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m0uek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_opwsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_su18p")
+}],
+"loop": true,
+"name": &"MoveForward",
+"speed": 30.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(512, 300)
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_b7wxd")
+metadata/_edit_group_ = true
+
+[node name="TankBody" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, 58)
+scale = Vector2(0.50354, 0.501562)
+sprite_frames = SubResource("SpriteFrames_14fnf")
+animation = &"Idle"
+frame_progress = 0.0513327
+
+[node name="TankHead" type="Sprite2D" parent="."]
+position = Vector2(21, -4)
+scale = Vector2(0.460938, 0.472656)
+texture = ExtResource("8_5ywrh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(-2, 58)
+scale = Vector2(0.50354, 0.501562)
+polygon = PackedVector2Array(-89.6511, -221.024, 100.432, -221.024, 100.432, -209.631, 108.943, -209.631, 108.943, -201.086, 120.291, -201.086, 120.291, -169.755, 108.943, -169.755, 108.943, -161.211, 100.432, -161.211, 100.432, -149.818, 89.0835, -149.818, 89.0835, -81.4598, 100.432, -81.4598, 100.432, -70.0668, 111.78, -70.0668, 111.78, -58.6738, 120.291, -58.6738, 120.291, -30.1914, 108.943, -30.1914, 108.943, -21.6467, 100.432, -21.6467, 100.432, -10.2537, -89.6511, -10.2537, -89.6511, -18.7984, -98.1622, -18.7984, -100.999, -30.1914, -109.51, -30.1914, -109.51, -58.6738, -100.999, -58.6738, -100.999, -70.0668, -89.6511, -70.0668, -89.6511, -81.4598, -78.3029, -81.4598, -78.3029, -149.818, -89.6511, -149.818, -89.6511, -161.211, -100.999, -161.211, -100.999, -169.755, -109.51, -169.755, -109.51, -198.238, -100.999, -198.238, -100.999, -209.631, -89.6511, -209.631)

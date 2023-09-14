@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf2sb30saxm0e"
-path="res://.godot/imported/SpaceShooterTank1Body3.png-e7ebb4d716798ba772d1f2629982facc.ctex"
+uid="uid://b2yku706aabol"
+path="res://.godot/imported/SpaceShooterTank1Body5.png-a3c9b28f45e9be35b5419910d3bbde68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SpaceShooterTank1Body3.png"
-dest_files=["res://.godot/imported/SpaceShooterTank1Body3.png-e7ebb4d716798ba772d1f2629982facc.ctex"]
+source_file="res://Assets/Tanks/SpaceShooterTank1Body5.png"
+dest_files=["res://.godot/imported/SpaceShooterTank1Body5.png-a3c9b28f45e9be35b5419910d3bbde68.ctex"]
 
 [params]
 

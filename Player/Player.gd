@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var speed = 5
-var maxSpeed = 400
+var maxSpeed = 3
 var rotateSpeed = 5
 
 func _physics_process(delta):
@@ -29,4 +29,5 @@ func _physics_process(delta):
 	position.y = wrapf(position.y, 0, 648)
 	velocity = velocity.normalized() * clamp(velocity.length(), 0, maxSpeed)
 	
-	move_and_slide()
+	position = position + velocity
+	#move_and_slide()
