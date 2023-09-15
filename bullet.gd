@@ -1,15 +1,19 @@
 extends Area2D
 
-var speed = 500
+var speed = 10
 var damage = 10
 var velocity = Vector2.ZERO
 
 func _ready():
 	velocity = Vector2(0, -speed).rotated(rotation)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	position = position + velocity
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
+	queue_free()
+
+
+func _on_timer_timeout():
 	queue_free()

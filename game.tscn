@@ -1,7 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://exrwvyqwudl1"]
+[gd_scene load_steps=3 format=3 uid="uid://exrwvyqwudl1"]
 
 [ext_resource type="PackedScene" uid="uid://csxqvjn2hlel1" path="res://player.tscn" id="1_ea8hh"]
+[ext_resource type="PackedScene" uid="uid://ddn6x8eb3s0xv" path="res://zombie.tscn" id="2_4enm8"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ea8hh")]
+
+[node name="ZombieContainer" type="Node2D" parent="."]
+
+[node name="Zombie" parent="ZombieContainer" instance=ExtResource("2_4enm8")]
+position = Vector2(261, 184)
+
+[node name="Zombie2" parent="ZombieContainer" instance=ExtResource("2_4enm8")]
+position = Vector2(961, 307)
+
+[node name="Effects" type="Node2D" parent="."]

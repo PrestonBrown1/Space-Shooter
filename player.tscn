@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://csxqvjn2hlel1"]
 
-[ext_resource type="Script" path="res://Player/Player.gd" id="1_b7wxd"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_rkri7"]
 [ext_resource type="Texture2D" uid="uid://cucn08cda3qrr" path="res://Assets/Tanks/SpaceShooterTank1Body1.png" id="2_dcjf2"]
 [ext_resource type="Texture2D" uid="uid://bmfvjdp7jsggi" path="res://Assets/Tanks/SpaceShooterTank1Body6.png" id="3_su18p"]
 [ext_resource type="Texture2D" uid="uid://b2yku706aabol" path="res://Assets/Tanks/SpaceShooterTank1Body5.png" id="4_opwsx"]
@@ -69,7 +69,7 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(512, 300)
 scale = Vector2(0.7, 0.7)
-script = ExtResource("1_b7wxd")
+script = ExtResource("1_rkri7")
 metadata/_edit_group_ = true
 
 [node name="TankBody" type="AnimatedSprite2D" parent="."]
