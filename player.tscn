@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://csxqvjn2hlel1"]
+[gd_scene load_steps=11 format=3 uid="uid://csxqvjn2hlel1"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_rkri7"]
 [ext_resource type="Texture2D" uid="uid://cucn08cda3qrr" path="res://Assets/Tanks/SpaceShooterTank1Body1.png" id="2_dcjf2"]
@@ -66,6 +66,9 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgtaa"]
+size = Vector2(121.429, 110)
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(512, 300)
 scale = Vector2(0.7, 0.7)
@@ -89,3 +92,12 @@ visible = false
 position = Vector2(-2, 58)
 scale = Vector2(0.50354, 0.501562)
 polygon = PackedVector2Array(-89.6511, -221.024, 100.432, -221.024, 100.432, -209.631, 108.943, -209.631, 108.943, -201.086, 120.291, -201.086, 120.291, -169.755, 108.943, -169.755, 108.943, -161.211, 100.432, -161.211, 100.432, -149.818, 89.0835, -149.818, 89.0835, -81.4598, 100.432, -81.4598, 100.432, -70.0668, 111.78, -70.0668, 111.78, -58.6738, 120.291, -58.6738, 120.291, -30.1914, 108.943, -30.1914, 108.943, -21.6467, 100.432, -21.6467, 100.432, -10.2537, -89.6511, -10.2537, -89.6511, -18.7984, -98.1622, -18.7984, -100.999, -30.1914, -109.51, -30.1914, -109.51, -58.6738, -100.999, -58.6738, -100.999, -70.0668, -89.6511, -70.0668, -89.6511, -81.4598, -78.3029, -81.4598, -78.3029, -149.818, -89.6511, -149.818, -89.6511, -161.211, -100.999, -161.211, -100.999, -169.755, -109.51, -169.755, -109.51, -198.238, -100.999, -198.238, -100.999, -209.631, -89.6511, -209.631)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.714294, 0.714264)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pgtaa")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

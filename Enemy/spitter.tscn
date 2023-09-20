@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsr53my7703b8"]
+
+[ext_resource type="Script" path="res://Enemy/Spitter.gd" id="1_lvojd"]
+[ext_resource type="Texture2D" uid="uid://bxiu7ufk3oq2y" path="res://Assets/ZombieSpitter1W1.png" id="2_2lxvy"]
+[ext_resource type="Texture2D" uid="uid://yoolx3bilpy7" path="res://Assets/ZombieSpitter1W2.png" id="3_nixxo"]
+[ext_resource type="Texture2D" uid="uid://xbilfag5x2fl" path="res://Assets/ZombieSpitter1W3.png" id="4_ini6g"]
+[ext_resource type="Texture2D" uid="uid://b7bb2srnoapyl" path="res://Assets/ZombieSpitter1W4.png" id="5_48k7r"]
+[ext_resource type="Texture2D" uid="uid://brbpovnrogekx" path="res://Assets/ZombieSpitter1W5.png" id="6_gmqyh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n0xes"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2lxvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nixxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ini6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_48k7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gmqyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2lxvy")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="Spitter" type="CharacterBody2D"]
+script = ExtResource("1_lvojd")
+
+[node name="SpitterBody" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -9)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_n0xes")
+animation = &"Walk"
+frame_progress = 0.251685
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(-1, -9)
+scale = Vector2(0.2, 0.2)
+polygon = PackedVector2Array(-60, 50, -20, 50, -20, 20, 30, 20, 30, 50, 70, 50, 70, 20, 80, 20, 80, -140, 30, -170, 30, -255, -40, -255, -75, -220, -55, -170, -100, -150, -100, -60, -80, -30, -80, 10)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+polygon = PackedVector2Array(-13, 1, -5, 1, -5, -5, 5, -5, 5, 1, 13, 1, 13, -5, 15, -5, 15, -37, 5, -43, 5, -60, -9, -60, -16, -53, -12, -43, -21, -39, -21, -21, -17, -15, -17, -7)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

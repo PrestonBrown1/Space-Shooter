@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://exrwvyqwudl1"]
+[gd_scene load_steps=5 format=3 uid="uid://exrwvyqwudl1"]
 
 [ext_resource type="PackedScene" uid="uid://csxqvjn2hlel1" path="res://player.tscn" id="1_ea8hh"]
 [ext_resource type="PackedScene" uid="uid://ddn6x8eb3s0xv" path="res://zombie.tscn" id="2_4enm8"]
+[ext_resource type="Script" path="res://PlayerContainer.gd" id="2_iob38"]
+[ext_resource type="PackedScene" uid="uid://dsr53my7703b8" path="res://Enemy/spitter.tscn" id="3_7e3tg"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_ea8hh")]
+[node name="Effects" type="Node2D" parent="."]
 
 [node name="ZombieContainer" type="Node2D" parent="."]
 
@@ -15,4 +17,12 @@ position = Vector2(261, 184)
 [node name="Zombie2" parent="ZombieContainer" instance=ExtResource("2_4enm8")]
 position = Vector2(961, 307)
 
-[node name="Effects" type="Node2D" parent="."]
+[node name="PlayerContainer" type="Node2D" parent="."]
+script = ExtResource("2_iob38")
+
+[node name="Player" parent="PlayerContainer" instance=ExtResource("1_ea8hh")]
+
+[node name="SpitterContainer" type="Node2D" parent="."]
+
+[node name="Spitter" parent="SpitterContainer" instance=ExtResource("3_7e3tg")]
+position = Vector2(784, 112)

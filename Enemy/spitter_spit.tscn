@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://604dd475vsww"]
+
+[ext_resource type="Script" path="res://Enemy/Spit.gd" id="1_y7inl"]
+[ext_resource type="Texture2D" uid="uid://b0yrkoqk3ujgr" path="res://Assets/Projectiles/ZombieSpit1.png" id="2_rrn2b"]
+
+[node name="Spitter Spit" type="Area2D"]
+script = ExtResource("1_y7inl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 8)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_rrn2b")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(3, 4)
+scale = Vector2(0.118381, 0.111003)
+polygon = PackedVector2Array(0, -90, 20, -70, 14.0645, -49.2, 40, -50, 40, -30, 40, -10, 20, -10, 20, 10, 0, 30, -20, 30, -20, 10, -40, 10, -40, 10, -60, 10, -55.7419, -12.8, -80, -10, -80, -70, -61.9355, -70.4, -60, -90, -20, -90)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,10 +1,14 @@
 extends CharacterBody2D
 
 var speed = 5
+var dmg = 0
 var maxSpeed = 3
-var rotateSpeed = 5
+var rotateSpeed = 3.5
+var health = 100
 var barrel = Vector2(60, 0)
 var Bullet = load("res://Player/bullet.tscn")
+var Effects = null
+var Explosion = load("res://explosion.tscn")
 
 func _physics_process(_delta):
 	#Moving
@@ -38,10 +42,34 @@ func _physics_process(_delta):
 	#Shooting
 	if (Input.is_action_just_pressed("Shoot")):
 		var bullet = Bullet.instantiate()
-		var Effects = get_node_or_null("/root/Game/Effects")
+		Effects = get_node_or_null("/root/Game/Effects")
 		
 		bullet.position = position + barrel.rotated(rotation)
 		bullet.rotation = rotation + deg_to_rad(90)
 		
 		if (Effects != null):
 			Effects.add_child(bullet)
+			
+func damage(dmg):
+	health -= dmg
+	
+	if (health <= 0):
+		Effects = get_node_or_null("/root/Game/Effects")
+		if (Effects != null):
+			var explosion = Explosion.instantiate()
+			Effects.add_child(explosion)
+			explosion.global_position = global_position
+			explosion.scale = Vector2(.6, .6)
+			hide()
+			await explosion._on_animation_finished
+			
+		queue_free()
+
+
+func _on_area_2d_body_entered(body):
+	if (body.name != "Player"):
+		damage(body.dmg)
+		print("Damage")
+		print(body.damage)
+		print("Health")
+		print(health)

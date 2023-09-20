@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://bvpu40tdfgpcq"]
+
+[ext_resource type="Texture2D" uid="uid://ml0daem3udky" path="res://Assets/ParticlesEffects/Explosion.png" id="1_jc4uo"]
+[ext_resource type="Script" path="res://Effects/explosion.gd" id="2_ua41f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wy1f"]
+atlas = ExtResource("1_jc4uo")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfrlc"]
+atlas = ExtResource("1_jc4uo")
+region = Rect2(0, 640, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3gl7"]
+atlas = ExtResource("1_jc4uo")
+region = Rect2(0, 1280, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hx4b"]
+atlas = ExtResource("1_jc4uo")
+region = Rect2(0, 1920, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw074"]
+atlas = ExtResource("1_jc4uo")
+region = Rect2(0, 2560, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6afjk"]
+atlas = ExtResource("1_jc4uo")
+region = Rect2(0, 3200, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqx5i"]
+atlas = ExtResource("1_jc4uo")
+region = Rect2(0, 3840, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1wg0"]
+atlas = ExtResource("1_jc4uo")
+region = Rect2(0, 4480, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8f8h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wy1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfrlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3gl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hx4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw074")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6afjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqx5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1wg0")
+}],
+"loop": false,
+"name": &"Explode",
+"speed": 20.0
+}]
+
+[node name="Explosion" type="AnimatedSprite2D"]
+position = Vector2(226, 34)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_c8f8h")
+animation = &"Explode"
+frame = 7
+frame_progress = 1.0
+offset = Vector2(0, 50)
+script = ExtResource("2_ua41f")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
