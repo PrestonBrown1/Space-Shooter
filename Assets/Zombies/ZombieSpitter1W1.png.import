@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yoolx3bilpy7"
-path="res://.godot/imported/ZombieSpitter1W2.png-0fc61c29320ef89bd5e7f6215e627008.ctex"
+uid="uid://bxiu7ufk3oq2y"
+path="res://.godot/imported/ZombieSpitter1W1.png-e258ccd028553d109d369e6a62fe4a16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ZombieSpitter1W2.png"
-dest_files=["res://.godot/imported/ZombieSpitter1W2.png-0fc61c29320ef89bd5e7f6215e627008.ctex"]
+source_file="res://Assets/Zombies/ZombieSpitter1W1.png"
+dest_files=["res://.godot/imported/ZombieSpitter1W1.png-e258ccd028553d109d369e6a62fe4a16.ctex"]
 
 [params]
 

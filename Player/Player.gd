@@ -32,8 +32,8 @@ func _physics_process(_delta):
 	if (Input.is_action_just_released("Back") || Input.is_action_just_released("Forward")):
 		velocity = Vector2(0, 0)
 		
-	position.x = wrapf(position.x, 0, 1152)
-	position.y = wrapf(position.y, 0, 648)
+	position.x = wrapf(position.x, 0, Global.VP.x)
+	position.y = wrapf(position.y, 0, Global.VP.y)
 	velocity = velocity.normalized() * clamp(velocity.length(), 0, maxSpeed)
 	
 	position = position + velocity
@@ -63,6 +63,7 @@ func damage(dmg):
 			hide()
 			await explosion._on_animation_finished
 			
+		Global.updateLives(-1)
 		queue_free()
 
 

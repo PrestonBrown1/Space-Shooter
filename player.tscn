@@ -96,8 +96,8 @@ polygon = PackedVector2Array(-89.6511, -221.024, 100.432, -221.024, 100.432, -20
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(0.714294, 0.714264)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pgtaa")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

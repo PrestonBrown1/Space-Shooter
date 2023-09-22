@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxiu7ufk3oq2y"
-path="res://.godot/imported/ZombieSpitter1W1.png-cd6e83efc2a4f9fd500dca5b2957311b.ctex"
+uid="uid://c2eg13ahvjcqm"
+path="res://.godot/imported/Heart.png-7e43d5c1e840298bd2c202716ad21322.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ZombieSpitter1W1.png"
-dest_files=["res://.godot/imported/ZombieSpitter1W1.png-cd6e83efc2a4f9fd500dca5b2957311b.ctex"]
+source_file="res://Assets/Heart.png"
+dest_files=["res://.godot/imported/Heart.png-7e43d5c1e840298bd2c202716ad21322.ctex"]
 
 [params]
 
