@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://exrwvyqwudl1"]
+[gd_scene load_steps=10 format=3 uid="uid://exrwvyqwudl1"]
 
+[ext_resource type="Texture2D" uid="uid://mtqc8dvpkpnx" path="res://Assets/Background.png" id="1_c0tu7"]
 [ext_resource type="PackedScene" uid="uid://csxqvjn2hlel1" path="res://player.tscn" id="1_ea8hh"]
 [ext_resource type="PackedScene" uid="uid://ddn6x8eb3s0xv" path="res://zombie.tscn" id="2_4enm8"]
 [ext_resource type="Script" path="res://PlayerContainer.gd" id="2_iob38"]
@@ -7,8 +8,14 @@
 [ext_resource type="FontFile" uid="uid://ccc8ydygb0nv5" path="res://UI/Fonts/Zombified.ttf" id="5_7il56"]
 [ext_resource type="Script" path="res://HUD.gd" id="5_hhkmi"]
 [ext_resource type="Script" path="res://UI/Menu.gd" id="7_td3vq"]
+[ext_resource type="AudioStream" uid="uid://bvp0g8ljrelrq" path="res://Assets/Project1GameSong.wav" id="9_qw5v6"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(579, 329)
+scale = Vector2(1.80781, 1.025)
+texture = ExtResource("1_c0tu7")
 
 [node name="Effects" type="Node2D" parent="."]
 
@@ -164,6 +171,10 @@ theme_override_fonts/font = ExtResource("5_7il56")
 theme_override_font_sizes/font_size = 40
 text = "Quit
 "
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_qw5v6")
+autoplay = true
 
 [connection signal="timeout" from="UI/HUD/Timer" to="UI/HUD" method="_on_timer_timeout"]
 [connection signal="pressed" from="UI/Menu/Restart" to="UI/Menu" method="_on_restart_pressed"]

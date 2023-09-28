@@ -35,7 +35,7 @@ func _process(_delta):
 func reset():
 	get_tree().paused = false
 	score = 0
-	time = 30
+	time = 60
 	lives = 3
 
 func updateLives(l):
