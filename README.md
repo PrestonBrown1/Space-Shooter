@@ -1,6 +1,6 @@
 # Space Shooter
 Project 2 for MSCH-C220
-Description
+A very simple 2D "Space Shooter" not actually in space :P
 
 ## Implementation
 
@@ -9,7 +9,9 @@ This game has a score, time limit, and way to get better at the game.
 ## References
 Font made by Chad Savage
 ## Future Development
-Endless Level?
+Endless Levels?
+More enemy types
 Upgrades For Tank
+Boss Fights
 ## Created by
 Preston Brown
